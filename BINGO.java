@@ -63,21 +63,31 @@ class BINGO {
 		System.out.println("\nFinal board is (0 indicates any BINGO coin placed on board): ");
 		printBingo(board);
 	
-		// Prompt user to restart or quit game 
-		System.out.println("\nDo you want to restart the game?\n'Y' to restart\n'N' to stop simulation.");
-		input = in.nextLine();
+	    boolean validinput = false;
+	    while (validinput == false)
+        {
+    		// Prompt user to restart or quit game 
+    		System.out.println("\nDo you want to restart the game?\n'Y' to restart\n'N' to stop simulation.");
+    		input = in.nextLine();
 
-		// Restart or quit game based on user answer
-		if (input.equals("Y"))
-		{
-			cardValues.clear();
-			cardsDrawn.clear();
-			userWon = false;
-		}
-		else if (input.equals("N"))
-		{
-			break;
-		}
+    		// Restart or quit game based on user answer
+    		if (input.equals("Y"))
+    		{
+    			cardValues.clear();
+    			cardsDrawn.clear();
+    			userWon = false;
+    			validinput = true;
+    		}
+    		else if (input.equals("N"))
+    		{
+    		    validinput = true;
+    			break;
+    		}
+    		else
+    		{
+    		    System.out.println("Invalid input");
+    		}
+        }
 	}
   
 }
